@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=1280, initial-scale=1.0, user-scalable=no">
+
+    <title>DICE</title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <meta name="description" content="A little custom DND dice calculator!" />
+    <!-- basic Meta Tags -->
+    <meta property="og:title" content="Roll The Dice" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://michaeldicemachine.samtaseff.repl.co/" />
+    <meta property="og:image" content="https://michaeldicemachine.samtaseff.repl.co/dice.png" />
+
+    <!-- facebook Meta Tags -->
+    <meta property="og:description" content="A little custom DND dice calculator!" />
+    <meta property="og:site_name" content="Custom DND Dice Calc" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="en_GB" />
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
+
+    <script src="script.js"></script>
+
+    <header>
+      <h1>
+        Custom Dice Calculator
+      </h1>
+    </header>
+
+    <div id="panel">
+      <div id="display">
+        <h3>Output</h3>
+
+        <form id="outputSettings">
+          <input style="margin-left: 10px;" type="checkbox" id="Raw" name="Raw" value="Raw"/>
+          <label for="Raw" style="margin-left: 10px;">Show raw rolls</label>
+          <br><br>
+          <input style="margin-left: 10px;" type="checkbox" id="Count" name="Count" value="Count" checked="true"/>
+          <label for="Count" style="margin-left: 10px;">Show Counts</label>
+        </form>
+
+      </div>
+
+      <form id="formungus">
+        <h3 style="text-align: center;">Dice options</h3>
+        <br>
+
+        <div id="row1">
+          <label for="Amount">Number of Dice (at least 1):</label>
+          <input id="Amount" name="Amount" type="number" min="1" max="100000" maxlength="5" value="10"/>
+        </div>
+
+        <br>
+
+        <div id="row2">
+          <label for="Sides">Number of Sides (at least 2): </label>
+          <input id="Sides" name="Sides" type="number" min="2" max="100000" maxlength="5" value="3"/>
+        </div>
+        
+        <br>
+        
+        <div id="row3">
+          <input type="button" onclick="userRoll()" value="Roll"/>
+
+          <!--presets -->
+
+          <input id="formReset" type="reset"/>
+        </div>
+
+        <br>
+      </form>
+
+      <div id="options">
+        <h3>Only Count these numbers</h3>
+        <p style="margin-left: 10px; margin-bottom: -10px;">(Comma separated)</p>
+
+        <br>
+        <input id="customCount" style="margin-left: 10px;"/>
+      </div>
+
+    </div>
+    
+    <div id="outputBox">
+      <p>Make sure to only type numbers and commas in the custom count entry, no spaces</p>
+    </div>
+
+    <footer>
+      <ul>
+        <li>
+          <p>
+            Made by <a href="https://cyanseraph.net/">@Sammot</a>
+          </p>
+        </li>
+        <li>
+          <div>
+            <p>
+              Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <p>
+            This probably doesn't look very good on mobile, currently it's best optimised for PC.
+          </p>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

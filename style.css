@@ -1,0 +1,168 @@
+/* html {
+  overflow: hidden;
+} */
+
+body {
+  margin: 50px;
+
+  background-color: rgba(33, 21, 89);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h3 {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+#panel {
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: stretch;
+
+  flex-wrap: nowrap;
+}
+
+#formungus {
+  color: white;
+  display: flex;
+
+  border-radius: 8px;
+
+  flex-direction: column;
+
+  background: rgb(149, 149, 255);
+
+  width: 400px;
+
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+#formungus > div {
+  flex: 1;
+  background-color: rgb(255, 150, 232);
+  
+  margin: 10px;
+
+  justify-content: space-between;
+
+  border-radius: 5px;
+
+  color: white;
+}
+
+#row1 {
+  display: flex;
+}
+#row2 {
+  display: flex;
+}
+#row3 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#outputBox {
+  border-radius: 8px;
+  background-color: blueviolet;
+  color: aliceblue;
+  width: 50%;
+  margin: 10px;
+
+  word-wrap: break-word;
+  overflow-y: scroll;
+
+  min-width: 500px;
+  min-height: 350px;
+
+  max-height: 350px;
+}
+
+p {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+#options {
+  color: white;
+  border-radius: 8px;
+  background-color: rgb(138, 106, 253);
+  flex: 1;
+  min-width: 180px;
+}
+#display {
+  color: white;
+  border-radius: 8px;
+  background-color: rgb(138, 106, 253);
+  flex: 1;
+  min-width: 180px;
+}
+
+
+header {
+  margin: 0 0;
+  width: 100%;
+  background-color: rgba(72, 50, 168);
+  color: white;
+  margin-top: -40px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+header > h1 {
+  margin-left: 10px;
+}
+
+footer {
+  margin: 0 0;
+  width: 100%;
+  background-color: rgba(72, 50, 168);
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  height: auto;
+}
+
+footer > h4 {
+  margin-left: 10px;
+}
+footer > div {
+  margin-left: 10px;
+}
+
+a:link {
+  color: rgb(0, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(102, 180, 216);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(234, 0, 255);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: underline;
+}
