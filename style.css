@@ -1,44 +1,82 @@
-/* html {
-  overflow: hidden;
-} */
-
 body {
-  margin: 50px;
-
   background-color: rgba(33, 21, 89);
 
   display: flex;
 
-  justify-content: center;
 
   align-items: center;
 
   flex-direction: column;
 
+	height: 98vh;
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+	
+/*     position: relative */
 }
 
-h3 {
+header {
+  margin: 0 0;
+  width: 100%;
+  background-color: rgba(72, 50, 168);
+  color: white;
+  border-radius: 8px;
+
+	margin-bottom: 10px;
+
+	flex: 1;
+}
+header > h1 {
   margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
 }
 
-#panel {
+p {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+h3 {
+  margin: 10px;
+}
+
+
+.optionsbox {
+  color: white;
+  border-radius: 8px;
+  background-color: rgb(138, 106, 253);
+  flex: 1;
+  min-width: 180px;
+}
+
+#appcontainer {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+
+	max-width: 1300px;
+
+	
+	flex: 6;
+}
+
+
+#settingspanel {
   display: flex;
+
+	flex: 2;
 
   justify-content: space-around;
 
   align-items: stretch;
+	
+	flex-wrap: wrap;
 
-  flex-wrap: nowrap;
+	gap: 10px;
 }
 
-#formungus {
-  color: white;
+#dicedesign {
   display: flex;
-
-  border-radius: 8px;
 
   flex-direction: column;
 
@@ -46,11 +84,11 @@ h3 {
 
   width: 400px;
 
-  margin-left: 40px;
-  margin-right: 40px;
+	min-width: 300px;
+
 }
 
-#formungus > div {
+#dicedesign > div {
   flex: 1;
   background-color: rgb(255, 150, 232);
   
@@ -78,62 +116,27 @@ h3 {
   border-radius: 8px;
   background-color: blueviolet;
   color: aliceblue;
-  width: 50%;
-  margin: 10px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+	flex: 5;
 
   word-wrap: break-word;
   overflow-y: scroll;
-
-  min-width: 500px;
-  min-height: 350px;
-
-  max-height: 350px;
-}
-
-p {
-  margin-left: 10px;
-  margin-top: 5px;
-}
-
-#options {
-  color: white;
-  border-radius: 8px;
-  background-color: rgb(138, 106, 253);
-  flex: 1;
-  min-width: 180px;
-}
-#display {
-  color: white;
-  border-radius: 8px;
-  background-color: rgb(138, 106, 253);
-  flex: 1;
-  min-width: 180px;
-}
-
-
-header {
-  margin: 0 0;
-  width: 100%;
-  background-color: rgba(72, 50, 168);
-  color: white;
-  margin-top: -40px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-}
-
-header > h1 {
-  margin-left: 10px;
 }
 
 footer {
-  margin: 0 0;
+/* 	position: absolute; */
   width: 100%;
   background-color: rgba(72, 50, 168);
   color: white;
-  margin-top: 0px;
-  margin-bottom: 10px;
   border-radius: 8px;
   height: auto;
+
+	flex: 1;
+
+/* 	bottom: 0px; */
 }
 
 footer > h4 {
@@ -141,28 +144,4 @@ footer > h4 {
 }
 footer > div {
   margin-left: 10px;
-}
-
-a:link {
-  color: rgb(0, 255, 255);
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: rgb(102, 180, 216);
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: rgb(234, 0, 255);
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-a:active {
-  color: rgb(255, 255, 255);
-  background-color: transparent;
-  text-decoration: underline;
 }
