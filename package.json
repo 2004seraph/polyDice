@@ -1,0 +1,20 @@
+{
+  "name": "polydice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sammot/polyDice.git"
+  },
+  "author": "cyanseraph",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Sammot/polyDice/issues"
+  },
+  "homepage": "https://github.com/Sammot/polyDice#readme"
+}
