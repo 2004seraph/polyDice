@@ -1,7 +1,7 @@
 {
   "name": "polydice",
   "version": "1.0.0",
-  "description": "",
+  "description": "A custom DND dice calculator",
   "main": "index.js",
   "private": true,
   "scripts": {
