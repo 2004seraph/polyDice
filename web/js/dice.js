@@ -66,19 +66,20 @@ function userRoll() {
   var numberCountString = ""
 
   if (diceData.israw) {
-    numberCountString += "Each dice roll: " + "<br>" + JSON.stringify(roll) + "<br><br>"
+    numberCountString += "<p>Each dice roll:</p>" + "<ul><li>" + JSON.stringify(roll) + "</li></ul>"
   }
 
   if (diceData.iscount) {
-    numberCountString += "Numbers (side: count, sum): " + "<br>"
-
+    numberCountString += "<p>Totals:</p>"
+    numberCountString += "<ul>"
     let numbers = Object.keys(numberCount)
     for (let [index, item] of numbers.entries()) {
-      numberCountString += item.toString() + ": Count=" + numberCount[item] + ", Sum=" + (item * numberCount[item]).toString() + "<br>"
+      numberCountString += "<li>[" + item.toString() + "]: Count=" + numberCount[item] + ", Sum=" + (item * numberCount[item]).toString() + "</li>"
     }
+    numberCountString += "</ul><ul><li>count represents how many times that side was rolled</li><li>sum represents the side number multiplied by the count</li></ul>"
   }
 
-  let output = "<p>" + numberCountString
+  let output = numberCountString
   
   //custom counting
   var customCountsIsValid = /^[0-9,]*$/.test(diceData.customCounts);
@@ -105,7 +106,7 @@ function userRoll() {
 
   $("#outputpremessage").hide()
 
-  $('#outputBoxContent').html(output + "</p>")
+  $('#outputBoxContent').html(output)
 }
 
 //reset everything

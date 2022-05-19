@@ -183,8 +183,9 @@ h3 {
 
 	min-height: 100px;
 
-  	word-wrap: break-word;
+    word-break:break-all;
 	overflow-y: auto;
+	overflow-x: hidden;
 
 	flex-basis: 0;
 }
