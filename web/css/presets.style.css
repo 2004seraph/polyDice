@@ -37,7 +37,7 @@
 .presetItemTitle {
     flex: 1;
 
-    
+
     /* bandaid solution to the buttons overflowing */
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -75,6 +75,7 @@
 }
 
 #addPresetContainer {
+    background-color: rgb(201, 4, 191);
     width: calc(100% - 20px);
 
     margin: 10px;
