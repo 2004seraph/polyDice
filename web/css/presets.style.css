@@ -69,8 +69,6 @@
 }
 
 .addPresetInput {
-    word-wrap: break-word;
-    text-overflow: ellipsis;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: calc(100%-20px);
+    margin: 10px;
 }
