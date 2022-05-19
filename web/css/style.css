@@ -28,9 +28,17 @@ header {
   	flex-direction: column;
 
 	flex: 1;
+	
+	min-height: 100px;
+
+	overflow: hidden;
 }
 header > h1 {
   	margin: 10px;
+	text-overflow:ellipsis;
+
+	max-width: 100%;
+	max-height: 100%;
 }
 
 p {
@@ -51,7 +59,11 @@ h3 {
   	border-radius: 8px;
   	background-color: rgb(138, 106, 253);
   	flex: 1;
-  	min-width: 180px;
+  	min-width: 250px;
+}
+
+#diceactions {
+	flex: 1;
 }
 
 .form-group {
@@ -95,6 +107,8 @@ h3 {
 }
 .form-group-input-big {
 	flex: 2;
+
+	max-width: 100%;
 }
 .form-group-label-small {
 	flex: 1;
@@ -107,10 +121,11 @@ h3 {
 	flex: 2;
 }
 
+#customCount {
+}
+
 #appcontainer {
 	display: flex;
-	flex-direction: column;
-
 	width: 100%;
 
 	max-width: 1300px;
@@ -119,6 +134,17 @@ h3 {
 	
 	flex: 6;
 }
+
+#dicegui {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	gap: 10px;
+
+	flex: 4;
+}
+
 
 
 #settingspanel {
@@ -155,9 +181,27 @@ h3 {
 
 	flex: 5;
 
+	min-height: 100px;
+
   	word-wrap: break-word;
-  	overflow-y: scroll;
+	overflow-y: auto;
+
+	flex-basis: 0;
 }
+
+
+#diceactionscontainer {
+	width: calc(100% - 20px);
+	display: flex;
+	gap: 10px;
+	margin: 10px;
+	margin-top: 0;
+}
+.diceActionItem {
+	flex: 1;
+	height: 30px;
+}
+
 
 footer {
 /* 	position: absolute; */

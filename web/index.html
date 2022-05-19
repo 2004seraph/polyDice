@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=1280, initial-scale=1.0, user-scalable=no">
+
+    <title>polyDice</title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+
+    <meta name="description" content="A custom DND dice calculator!" />
+    <!-- basic Meta Tags -->
+    <meta property="og:title" content="Design and roll a dice" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dice.cyanseraph.net/" />
+    <meta property="og:image" content="https://dice.cyanseraph.net//dice.png" />
+
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' ajax.cloudflare.com static.cloudflareinsights.com; img-src 'self'; form-action 'self'; object-src 'none'; base-uri 'self'; worker-src 'self'; upgrade-insecure-requests; frame-src 'none';">
+
+    <!-- facebook Meta Tags -->
+    <meta property="og:description" content="A custom DND dice calculator!" />
+    <meta property="og:site_name" content="polyDice" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta name="theme-color" content="#ad03fc">
+
+    <link href="css/link.style.css" rel="stylesheet" type="text/css" />
+    <link href="css/presets.style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+	  
+    <script src="js/lib/jquery.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        polyDice: A Custom Dice Calculator
+      </h1>
+    </header>
+
+	<div id="appcontainer">
+		<div id="dicegui">
+			<div id="settingspanel">
+				<form class="optionsbox" id="dicedesign">
+					<h3>Dice design</h3>
+			
+					<div class="form-group">
+						<label class="form-group-label-big" for="Amount">Number of Dice</label>
+						<input class="form-group-input-small" id="Amount" name="Amount" type="number" min="1" max="100000" maxlength="5" value="10"/>
+					</div>
+			
+					<div class="form-group">
+						<label class="form-group-label-big" for="Sides">Number of Sides</label>
+						<input class="form-group-input-small" id="Sides" name="Sides" type="number" min="2" max="100000" maxlength="5" value="3"/>
+					</div>
+					
+					<!-- <div class="form-group" id="dicedesign-buttons">
+					</div> -->
+				</form>
+			
+				<div class="optionsbox">
+					<h3>Counting options</h3>
+					
+					<div class="form-group-column">
+						<label class="form-group-label-small" for="customcount">Only Count these numbers (Comma separated, numbers only, no spaces)</label>
+						<input class="form-group-input-big" name="customcount" id="customCount"/>
+					</div>
+				</div>
+
+				<div class="optionsbox">
+					<h3>Output options</h3>
+
+					<div class="form-group">
+						<label class="form-group-label-small" for="Raw">Show raw rolls</label>
+						<input type="checkbox" id="Raw" name="Raw" value="Raw"/>
+					</div>
+					<div class="form-group ">
+						<label class="form-group-label-small" for="Count">Show Counts</label>
+						<input type="checkbox" id="Count" name="Count" value="Count" checked="true"/>
+					</div>
+				</div>
+			</div>
+
+			<div class="optionsbox" id="diceactions">
+				<h3>Actions</h3>
+				<div id="diceactionscontainer">
+					<input class="diceActionItem" type="button" onclick="userRoll()" value="Roll"/>
+					<input class="diceActionItem" id="formReset" type="button" onclick="resetRoll()" value="Reset"/>
+				</div>
+			</div>
+			
+			<div id="outputBox">
+				<div id="outputpremessage" style="display:flex;"><p>Your dice roll data will be outputted here!</p></div>
+				<div id="outputBoxContent"></div>
+				<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>2<br><br><br><br><br><br><br><br> -->
+			</div>
+		</div>
+
+		<div id="presetOptions">
+			<h3>Presets</h3>
+			<p>These are not currently functional, do not use these.</p>
+
+			<div id="presetItemContainer">
+				<div class="presetItem savedPreset" id="infantryPresetItem">
+					<p>Infantry</p>
+					
+					<input class="presetItemButton" type="button" onclick="loadPreset('infantryPresetItem')" value="Load"/>
+					<input class="presetItemButton" type="button" onclick="removePreset('infantryPresetItem')" value="Remove"/>
+				</div>
+			</div>
+
+			<div class="presetItem" id="addPresetContainer">
+				<input class="form-group-input-big" type="text" name="presetnameinput" maxlength="18" placeholder="Preset Name" id="presetnameinput"/>
+				<input id="addPresetButton" type="button" onclick="addPreset()" value="Add preset"/>
+			</div>
+		</div>
+	</div>
+
+    <footer>
+      <ul>
+        <li><p>Made by <a href="https://cyanseraph.net/">@CYANSERAPH</a></p></li>
+        <li><div><p>Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p></div></li>
+        <li><p>Major update: switched hosts, refactored code, improved interface consistency, and made the app mobile friendly</p></li>
+      </ul>
+    </footer>
+
+
+    <script src="js/dice.js"></script>
+    <script src="js/preset.js"></script>
+  </body>
+</html>

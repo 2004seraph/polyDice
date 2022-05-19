@@ -1,3 +1,11 @@
+"use strict"
+
+function resetRoll() {
+  //$('#customCount').val('')
+  $("#outputpremessage").show()
+  $('#outputBoxContent').html("")
+}
+
 function diceRoll(amount, side) {
   let results = []
 
@@ -13,7 +21,7 @@ function userRoll() {
   var sizeIn = parseInt($('#Sides').val())
 
   if (isNaN(amountIn) == true || isNaN(sizeIn) == true || amountIn < 1 || sizeIn < 2) {
-    $('#outputBox').html("<p>Please enter a valid dice configuration</p>")
+    $('#outputBoxContent').html("<p>Please enter a valid dice configuration</p>")
 
     return
   }
@@ -54,29 +62,33 @@ function userRoll() {
   //custom counting
   let customCounts = $('#customCount').val()
 
-  if (customCounts != "") {
-    let customCountNumbers = customCounts.split(",")
+  var customCountsIsValid = /^[0-9,]*$/.test(customCounts);
 
-    let customSum = 0
-    let customCount = 0
+  if (!customCountsIsValid) {
+    output += "<br>Invalid custom count input, it has been ignored."
+  } else {
+    if (customCounts != "") {
+      let customCountNumbers = customCounts.split(",")
 
-    for (let cnum of roll) {
-      if (customCountNumbers.includes(cnum.toString())) {
-        customSum += cnum
-        customCount++
+      let customSum = 0
+      let customCount = 0
+
+      for (let cnum of roll) {
+        if (customCountNumbers.includes(cnum.toString())) {
+          customSum += cnum
+          customCount++
+        }
       }
-    }
 
-    output += "<br>Custom number selection [" + customCounts.toString() + "]: Count=" + customCount.toString() + ", sum=" + customSum.toString()
+      output += "<br>Custom number selection [" + customCounts.toString() + "]: Count=" + customCount.toString() + ", sum=" + customSum.toString()
+    }
   }
 
-  $('#outputBox').html(output + "</p>")
+  $("#outputpremessage").hide()
+
+  $('#outputBoxContent').html(output + "</p>")
 }
 
 //reset everything
-$(document).ready(function() {
-  $('form').on('reset', function(e) {
-    $('#customCount').val('')
-    $('#outputBox').html("<p>Make sure to only type numbers and commas in the custom count entry, no spaces</p>")
-  })
-})
+// $(document).ready(function() {
+// })
