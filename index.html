@@ -44,11 +44,11 @@
 	        <h3>Output options</h3>
 
 			<div class="form-group">
-	          	<label class="form-group-label" for="Raw">Show raw rolls</label>
+	          	<label class="form-group-label-small" for="Raw">Show raw rolls</label>
 				<input type="checkbox" id="Raw" name="Raw" value="Raw"/>
 			</div>
 			<div class="form-group ">
-	          	<label class="form-group-label" for="Count">Show Counts</label>
+	          	<label class="form-group-label-small" for="Count">Show Counts</label>
 	          	<input type="checkbox" id="Count" name="Count" value="Count" checked="true"/>
 			</div>
 			  
@@ -56,40 +56,30 @@
 	      </div>
 	
 	      <form class="optionsbox" id="dicedesign">
-	        <h3 style="text-align: center;">Dice Design</h3>
-	        <br>
+	        <h3>Dice Design</h3>
 	
 	        <div class="form-group">
-	          <label class="form-group-label" for="Amount">Number of Dice (at least 1)</label>
-	          <input id="Amount" name="Amount" type="number" min="1" max="100000" maxlength="5" value="10"/>
+	          <label class="form-group-label-big" for="Amount">Number of Dice (at least 1)</label>
+	          <input class="form-group-input-small" id="Amount" name="Amount" type="number" min="1" max="100000" maxlength="5" value="10"/>
 	        </div>
-	
-	        <br>
 	
 	        <div class="form-group">
-	          <label class="form-group-label" for="Sides">Number of Sides (at least 2)</label>
-	          <input id="Sides" name="Sides" type="number" min="2" max="100000" maxlength="5" value="3"/>
+	          <label class="form-group-label-big" for="Sides">Number of Sides (at least 2)</label>
+	          <input class="form-group-input-small" id="Sides" name="Sides" type="number" min="2" max="100000" maxlength="5" value="3"/>
 	        </div>
 	        
-	        <br>
-	        
-	        <div class="form-group" id="row3">
+	        <div class="form-group" id="dicedesign-buttons">
 	          <input type="button" onclick="userRoll()" value="Roll"/>
-	
-	          <!--presets -->
-	
 	          <input id="formReset" type="reset"/>
 	        </div>
-	
-	        <br>
 	      </form>
 	
 	      <div class="optionsbox">
 	        <h3>Counting options</h3>
 			  
 			<div class="form-group">
-			    <label class="form-group-label" for="customcount">Only Count these numbers (Comma separated)</label>
-	        	<input class="form-group-input" name="customcount" id="customCount"/>
+			    <label class="form-group-label-small" for="customcount">Only Count these numbers (Comma separated)</label>
+	        	<input class="form-group-input-big" name="customcount" id="customCount"/>
 			</div>
 	      </div>
 	

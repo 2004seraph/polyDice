@@ -39,10 +39,14 @@ p {
 }
 h3 {
   	margin: 10px;
+	text-align: center;
 }
 
 
 .optionsbox {
+  	display: flex;
+  	flex-direction: column;
+	
   	color: white;
   	border-radius: 8px;
   	background-color: rgb(138, 106, 253);
@@ -54,12 +58,33 @@ h3 {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 10px;
+
+	gap: 10px;
+
+/* 	flex: 1; */
+  	background-color: rgb(255, 150, 232);
+  
+  	margin: 10px;
+	margin-top: 0px;
+
+  	justify-content: space-between;
+
+  	border-radius: 5px;
+
+  	color: white;
 }
-.form-group-input {
+.form-group-input-big {
 	flex: 2;
 }
-.form-group-label {
+.form-group-label-small {
 	flex: 1;
+}
+
+.form-group-input-small {
+	flex: 1;
+}
+.form-group-label-big {
+	flex: 2;
 }
 
 #appcontainer {
@@ -91,9 +116,6 @@ h3 {
 }
 
 #dicedesign {
-  	display: flex;
-
-  	flex-direction: column;
 
   	background: rgb(149, 149, 255);
 
@@ -103,24 +125,12 @@ h3 {
 
 }
 
-#dicedesign > div {
-  	flex: 1;
-  	background-color: rgb(255, 150, 232);
-  
-  	margin: 10px;
-
-  	justify-content: space-between;
-
-  	border-radius: 5px;
-
-  	color: white;
+#dicedesign-buttons {
+/*   	justify-content: space-between; */
 }
 
 .designrow {
   	display: flex;
-}
-#row3 {
-  	justify-content: space-evenly;
 }
 
 #outputBox {
