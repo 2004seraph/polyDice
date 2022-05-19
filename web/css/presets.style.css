@@ -60,8 +60,17 @@
     width: calc(100% - 20px);
 
     margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    justify-content: center;
 }
 
-#addPresetButton {
-    margin: 10px;
+.addPresetInput {
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    margin-left: 10px;
+    margin-right: 10px;
 }

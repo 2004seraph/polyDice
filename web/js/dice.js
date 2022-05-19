@@ -6,6 +6,28 @@ function resetRoll() {
   $('#outputBoxContent').html("")
 }
 
+function getDiceSetup() {
+  let diceSetupData = {}
+  
+  diceSetupData.amountIn = parseInt($('#Amount').val())
+  diceSetupData.sizeIn = parseInt($('#Sides').val())
+  diceSetupData.customCounts = $('#customCount').val()
+  diceSetupData.israw = $('#Raw').is(":checked")
+  diceSetupData.iscount = $('#Count').is(":checked")
+
+  //console.log(diceSetupData)
+
+  return diceSetupData
+}
+
+function setDiceSetup(data) {
+  $('#Amount').val(data.amountIn)
+  $('#Sides').val(data.sizeIn)
+  $('#customCount').val(data.customCounts)
+  $('#Raw').prop('checked', data.israw)
+  $('#Count').prop('checked', data.iscount)
+}
+
 function diceRoll(amount, side) {
   let results = []
 
@@ -17,26 +39,25 @@ function diceRoll(amount, side) {
 }
 
 function userRoll() {
-  var amountIn = parseInt($('#Amount').val())
-  var sizeIn = parseInt($('#Sides').val())
+  let diceData = getDiceSetup()
 
-  if (isNaN(amountIn) == true || isNaN(sizeIn) == true || amountIn < 1 || sizeIn < 2) {
+  if (isNaN(diceData.amountIn) == true || isNaN(diceData.sizeIn) == true || diceData.amountIn < 1 || diceData.sizeIn < 2) {
     $('#outputBoxContent').html("<p>Please enter a valid dice configuration</p>")
 
     return
   }
 
-  let roll = diceRoll(amountIn, sizeIn)
+  let roll = diceRoll(diceData.amountIn, diceData.sizeIn)
 
   let numberCount = {}
 
-  for (var c = 0; c <= sizeIn; c++) {
+  for (var c = 0; c <= diceData.sizeIn; c++) {
     numberCount[c] = 0
   }
-  for (var i = 0; i < amountIn; i++) {
+  for (var i = 0; i < diceData.amountIn; i++) {
     numberCount[roll[i]]++
   }
-  for (var d = sizeIn; d >= 0; d--) {
+  for (var d = diceData.sizeIn; d >= 0; d--) {
     if (numberCount[d] == 0 || numberCount[d] == null) {
       delete numberCount[d]
     }
@@ -44,11 +65,11 @@ function userRoll() {
 
   var numberCountString = ""
 
-  if ($('#Raw').is(":checked")) {
+  if (diceData.israw) {
     numberCountString += "Raw: " + "<br>" + JSON.stringify(roll) + "<br><br>"
   }
 
-  if ($('#Count').is(":checked")) {
+  if (diceData.iscount) {
     numberCountString += "Numbers (side: count, sum): " + "<br>"
 
     let numbers = Object.keys(numberCount)
@@ -60,15 +81,13 @@ function userRoll() {
   let output = "<p>" + numberCountString
   
   //custom counting
-  let customCounts = $('#customCount').val()
-
-  var customCountsIsValid = /^[0-9,]*$/.test(customCounts);
+  var customCountsIsValid = /^[0-9,]*$/.test(diceData.customCounts);
 
   if (!customCountsIsValid) {
     output += "<br>Invalid custom count input, it has been ignored."
   } else {
-    if (customCounts != "") {
-      let customCountNumbers = customCounts.split(",")
+    if (diceData.customCounts != "") {
+      let customCountNumbers = diceData.customCounts.split(",")
 
       let customSum = 0
       let customCount = 0
@@ -80,7 +99,7 @@ function userRoll() {
         }
       }
 
-      output += "<br>Custom number selection [" + customCounts.toString() + "]: Count=" + customCount.toString() + ", sum=" + customSum.toString()
+      output += "<br>Custom number selection [" + diceData.customCounts.toString() + "]: Count=" + customCount.toString() + ", sum=" + customSum.toString()
     }
   }
 

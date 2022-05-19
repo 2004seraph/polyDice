@@ -97,20 +97,15 @@
 
 		<div id="presetOptions">
 			<h3>Presets</h3>
-			<p>These are not currently functional, do not use these.</p>
+			<p>These presets are only saved on your device, within your browser</p>
 
 			<div id="presetItemContainer">
-				<div class="presetItem savedPreset" id="infantryPresetItem">
-					<p>Infantry</p>
-					
-					<input class="presetItemButton" type="button" onclick="loadPreset('infantryPresetItem')" value="Load"/>
-					<input class="presetItemButton" type="button" onclick="removePreset('infantryPresetItem')" value="Remove"/>
-				</div>
+				<!-- where preset elements go -->
 			</div>
 
 			<div class="presetItem" id="addPresetContainer">
-				<input class="form-group-input-big" type="text" name="presetnameinput" maxlength="18" placeholder="Preset Name" id="presetnameinput"/>
-				<input id="addPresetButton" type="button" onclick="addPreset()" value="Add preset"/>
+				<input class="addPresetInput" type="text" name="presetnameinput" maxlength="18" placeholder="Preset name (no spaces)" id="presetnameinput"/>
+				<input class="addPresetInput" type="button" onclick="addPreset()" value="Save preset"/>
 			</div>
 		</div>
 	</div>
