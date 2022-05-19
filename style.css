@@ -73,6 +73,26 @@ h3 {
 
   	color: white;
 }
+.form-group-column {
+	display: flex;
+  	flex-direction: column;
+	flex-wrap: wrap;
+	padding: 10px;
+
+	gap: 10px;
+
+/* 	flex: 1; */
+  	background-color: rgb(255, 150, 232);
+  
+  	margin: 10px;
+	margin-top: 0px;
+
+  	justify-content: space-between;
+
+  	border-radius: 5px;
+
+  	color: white;
+}
 .form-group-input-big {
 	flex: 2;
 }
@@ -116,13 +136,7 @@ h3 {
 }
 
 #dicedesign {
-
   	background: rgb(149, 149, 255);
-
-  	width: 400px;
-
-	min-width: 300px;
-
 }
 
 #dicedesign-buttons {
