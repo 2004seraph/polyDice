@@ -66,7 +66,7 @@ function userRoll() {
   var numberCountString = ""
 
   if (diceData.israw) {
-    numberCountString += "Raw: " + "<br>" + JSON.stringify(roll) + "<br><br>"
+    numberCountString += "Each dice roll: " + "<br>" + JSON.stringify(roll) + "<br><br>"
   }
 
   if (diceData.iscount) {
