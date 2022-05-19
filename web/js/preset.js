@@ -70,6 +70,7 @@ class PresetItem {
         //title
         let title = document.createElement("p")
         title.textContent = data.name
+        title.classList.add("presetItemTitle")
         this.presetItem.appendChild(title)
 
         //buttons
