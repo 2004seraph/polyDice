@@ -1,9 +1,13 @@
 "use strict"
 
+var lastResults = {}
+
 function resetRoll() {
   //$('#customCount').val('')
   $("#outputpremessage").show()
   $('#outputBoxContent').html("")
+
+  lastResults = {}
 }
 
 function getDiceSetup() {
@@ -47,6 +51,9 @@ function userRoll() {
     return
   }
 
+  lastResults.rolled = true
+  lastResults.dice = {amount: diceData.amountIn, sides: diceData.sizeIn}
+
   let roll = diceRoll(diceData.amountIn, diceData.sizeIn)
 
   let numberCount = {}
@@ -65,15 +72,24 @@ function userRoll() {
 
   var numberCountString = ""
 
+  lastResults.roll = {}
   if (diceData.israw) {
+    lastResults.roll.is = true
+    lastResults.roll.rolls = roll
     numberCountString += "<p>Each dice roll:</p>" + "<ul><li>" + JSON.stringify(roll) + "</li></ul>"
   }
 
+  lastResults.counts = {}
   if (diceData.iscount) {
     numberCountString += "<p>Totals:</p>"
     numberCountString += "<ul>"
+
+    lastResults.counts.items = {}
+
     let numbers = Object.keys(numberCount)
     for (let [index, item] of numbers.entries()) {
+      lastResults.counts.is = true
+      lastResults.counts.items[item] = {count: numberCount[item], sum: item * numberCount[item]}
       numberCountString += "<li>[" + item.toString() + "]: Count=" + numberCount[item] + ", Sum=" + (item * numberCount[item]).toString() + "</li>"
     }
     numberCountString += "</ul><ul><li>count represents how many times that side was rolled</li><li>sum represents the side number multiplied by the count</li></ul>"
@@ -83,11 +99,12 @@ function userRoll() {
   
   //custom counting
   var customCountsIsValid = /^[0-9,]*$/.test(diceData.customCounts);
-
+  lastResults.customCount = {}
   if (!customCountsIsValid) {
-    output += "<br>Invalid custom count input, it has been ignored."
+    output += "<p>Invalid custom count input, it has been ignored.</p>"
   } else {
     if (diceData.customCounts != "") {
+      lastResults.customCount.is = true
       let customCountNumbers = diceData.customCounts.split(",")
 
       let customSum = 0
@@ -95,18 +112,52 @@ function userRoll() {
 
       for (let cnum of roll) {
         if (customCountNumbers.includes(cnum.toString())) {
+          lastResults.counts.is = true
           customSum += cnum
           customCount++
         }
       }
 
-      output += "<br>Custom number selection [" + diceData.customCounts.toString() + "]: Count=" + customCount.toString() + ", sum=" + customSum.toString()
+      lastResults.customCount.numbers = customCountNumbers
+      lastResults.customCount.count = customCount
+      lastResults.customCount.sum = customSum
+
+      output += "<p>Custom number selection [" + diceData.customCounts.toString() + "]: Count=" + customCount.toString() + ", sum=" + customSum.toString() + "</p>"
     }
   }
 
   $("#outputpremessage").hide()
 
   $('#outputBoxContent').html(output)
+}
+
+function saveRoll() {
+  if ("rolled" in lastResults) {
+    let fileData = "polyDice Roll @ " + window.location.href + "\n\n"
+
+    fileData += "rolled " + lastResults.dice.amount + " " + lastResults.dice.sides + "-sided dice\n\n"
+
+    if ("is" in lastResults.roll) {
+      fileData += "Each Roll: " + JSON.stringify(lastResults.roll.rolls) + "\n\n"
+    }
+
+    if ("is" in lastResults.counts) {
+      for (var i in lastResults.counts.items) {
+        fileData += i + ": Count=" + lastResults.counts.items[i].count + ", Sum=" + lastResults.counts.items[i].sum + "\n"
+      }
+    }
+
+    if ("is" in lastResults.customCount) {
+      fileData += "\nCustom Totals of " + JSON.stringify(lastResults.customCount.numbers) + ": Count=" + lastResults.customCount.count + ", Sum=" + lastResults.customCount.sum
+    }
+    var a = document.getElementById("downloadSink")
+    var d = new Date()
+    var t = d.toLocaleDateString() + "_" + d.toLocaleTimeString().replace(/\s+/g, '')
+    a.setAttribute("download", "diceRoll_" + t + ".txt")
+    a.setAttribute("href", "data:text/txt," + fileData)
+    document.body.appendChild(a)
+    a.click()
+  }
 }
 
 //reset everything
