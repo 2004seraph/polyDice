@@ -66,6 +66,8 @@ class PresetItem {
         this.presetItem.id = data.name
         let parent = document.getElementById(eleCont)
         parent.appendChild(this.presetItem)
+
+        $("#" + data.name).hide()
         
         //title
         let title = document.createElement("p")
@@ -93,13 +95,23 @@ class PresetItem {
             removePreset(this.data.name)
         }
         this.presetItem.appendChild(remButton)
+
+        $("#" + data.name).fadeIn("fast")
     }
 
     remove() {
-        this.presetItem.remove()
+        $("#" + this.data.name).fadeOut("fast", () => {
+            this.presetItem.remove()
+        })
     }
 
     update() {
+        // $("#" + this.data.name).animate({
+        //     borderColor: '#98eb34'
+        // }, 500, "linear", function() {
+        //     console.log("done")
+        // });
+
         setPresets()
     }
 }
