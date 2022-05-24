@@ -76,6 +76,7 @@ class PresetItem {
         //buttons
         let loadButton = document.createElement("input")
         loadButton.classList.add("presetItemButton")
+        loadButton.classList.add("diceButton")
         loadButton.type = "button"
         loadButton.value = "Load"
         loadButton.onclick = () => {
@@ -85,6 +86,7 @@ class PresetItem {
 
         let remButton = document.createElement("input")
         remButton.classList.add("presetItemButton")
+        remButton.classList.add("diceButton")
         remButton.type = "button"
         remButton.value = "Remove"
         remButton.onclick = () => {

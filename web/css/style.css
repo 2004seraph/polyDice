@@ -1,5 +1,6 @@
 body {
-  	background-color: rgba(33, 21, 89);
+	background: rgb(58,60,180);
+	background: linear-gradient(47deg, rgba(58,60,180,1) 0%, rgba(150,23,222,1) 70%, rgb(206, 120, 255) 100%);
 
   	display: flex;
 
@@ -14,13 +15,30 @@ body {
   	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header {
-  	margin: 0 0;
-  	width: 100%;
-  	background-color: rgba(72, 50, 168);
-  	color: white;
-  	border-radius: 8px;
+.diceButton {
+	border-color: rgba(221, 111, 255, 0.822);
+	background-color: rgb(255, 240, 253);
+	border-radius: 8px;
+}
 
+.diceInput {
+	border-color: rgba(221, 111, 255, 0.822);
+	background-color: rgb(252, 226, 255);
+}
+
+.hfitem {
+	margin: 0 0;
+	width: 100%;
+	background-color: rgba(52, 15, 121, 0.527);
+	color: white;
+	border-radius: 8px;
+	
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.548);
+}
+
+header {
 	display: flex;
 
   	justify-content: space-around;
@@ -57,9 +75,34 @@ h3 {
 	
   	color: white;
   	border-radius: 8px;
-  	background-color: rgb(138, 106, 253);
+  	background-color: rgba(138, 106, 253, 0.815);
   	flex: 1;
   	min-width: 250px;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.596);
+}
+
+#outputBox {
+	background: rgb(0,8,87);
+	background: linear-gradient(0deg, rgb(46, 0, 121) 0%, rgb(181, 54, 255) 100%);
+	background-attachment:local;
+	background-size: 100% 100%;
+
+	border-radius: 8px;
+	color: aliceblue;
+	width: 100%;
+
+  	flex: 5;
+
+  	min-height: 100px;
+
+  	word-break:break-all;
+  	overflow-y: auto;
+  	overflow-x: hidden;
+
+  	flex-basis: 0;
 }
 
 #diceactions {
@@ -74,7 +117,7 @@ h3 {
 	gap: 10px;
 
 /* 	flex: 1; */
-  	background-color: rgb(255, 150, 232);
+  	background-color: rgb(241, 83, 255);
   
   	margin: 10px;
 	margin-top: 0px;
@@ -94,7 +137,7 @@ h3 {
 	gap: 10px;
 
 /* 	flex: 1; */
-  	background-color: rgb(255, 150, 232);
+  	background-color: rgb(241, 83, 255);
   
   	margin: 10px;
 	margin-top: 0px;
@@ -163,10 +206,6 @@ h3 {
 	gap: 10px;
 }
 
-#dicedesign {
-  	background: rgb(149, 149, 255);
-}
-
 #dicedesign-buttons {
 /*   	justify-content: space-between; */
 }
@@ -174,24 +213,6 @@ h3 {
 .designrow {
   	display: flex;
 }
-
-#outputBox {
-  	border-radius: 8px;
-  	background-color: blueviolet;
-  	color: aliceblue;
-  	width: 100%;
-
-	flex: 5;
-
-	min-height: 100px;
-
-    word-break:break-all;
-	overflow-y: auto;
-	overflow-x: hidden;
-
-	flex-basis: 0;
-}
-
 
 #diceactionscontainer {
 	width: calc(100% - 20px);
@@ -208,10 +229,6 @@ h3 {
 
 footer {
 /* 	position: absolute; */
-  	width: 100%;
-  	background-color: rgba(72, 50, 168);
-  	color: white;
-  	border-radius: 8px;
   	height: auto;
 
 	flex: 1;

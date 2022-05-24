@@ -34,7 +34,7 @@
     <script src="js/lib/jquery.js"></script>
   </head>
   <body>
-    <header>
+    <header class="hfitem">
       <h1>
         polyDice: A Custom Dice Calculator
       </h1>
@@ -48,12 +48,12 @@
 			
 					<div class="form-group">
 						<label class="form-group-label-big" for="Amount">Number of Dice</label>
-						<input class="form-group-input-small" id="Amount" name="Amount" type="number" min="1" max="100000" maxlength="5" value="10"/>
+						<input class="form-group-input-small diceInput" id="Amount" name="Amount" type="number" min="1" max="100000" maxlength="5" value="10"/>
 					</div>
 			
 					<div class="form-group">
 						<label class="form-group-label-big" for="Sides">Number of Sides</label>
-						<input class="form-group-input-small" id="Sides" name="Sides" type="number" min="2" max="100000" maxlength="5" value="3"/>
+						<input class="form-group-input-small diceInput" id="Sides" name="Sides" type="number" min="2" max="100000" maxlength="5" value="3"/>
 					</div>
 					
 					<!-- <div class="form-group" id="dicedesign-buttons">
@@ -65,7 +65,7 @@
 					
 					<div class="form-group-column">
 						<label class="form-group-label-small" for="customcount">Only Count these numbers (Comma separated, numbers only, no spaces)</label>
-						<input class="form-group-input-big" name="customcount" id="customCount"/>
+						<input class="form-group-input-big diceInput" name="customcount" id="customCount"/>
 					</div>
 				</div>
 
@@ -86,20 +86,20 @@
 			<div class="optionsbox" id="diceactions">
 				<h3>Actions</h3>
 				<div id="diceactionscontainer">
-					<input class="diceActionItem" type="button" onclick="userRoll()" value="Roll"/>
-					<input class="diceActionItem" id="formReset" type="button" onclick="resetRoll()" value="Reset"/>
-					<input class="diceActionItem" id="formReset" type="button" onclick="saveRoll()" value="Save Result"/>
+					<input class="diceActionItem diceButton" type="button" onclick="userRoll()" value="Roll"/>
+					<input class="diceActionItem diceButton" id="formReset" type="button" onclick="resetRoll()" value="Reset"/>
+					<input class="diceActionItem diceButton" id="formReset" type="button" onclick="saveRoll()" value="Save Result"/>
 				</div>
 			</div>
 			
-			<div id="outputBox">
+			<div class="optionsbox" id="outputBox">
 				<div id="outputpremessage" style="display:flex;"><p>Your dice roll data will be outputted here!</p></div>
 				<div id="outputBoxContent"></div>
 				<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>2<br><br><br><br><br><br><br><br> -->
 			</div>
 		</div>
 
-		<div id="presetOptions">
+		<div class="optionsbox" id="presetOptions">
 			<h3>Presets</h3>
 			<p>These presets are only saved on your device, within your browser</p>
 
@@ -108,21 +108,23 @@
 			</div>
 
 			<div class="presetItem" id="addPresetContainer">
-				<input class="addPresetInput" type="text" name="presetnameinput" maxlength="18" placeholder="Preset name (no spaces)" id="presetnameinput"/>
-				<input class="addPresetInput" type="button" onclick="addPreset()" value="Save preset"/>
+				<input class="addPresetInput diceInput" type="text" name="presetnameinput" maxlength="18" placeholder="Preset name (no spaces)" id="presetnameinput"/>
+				<input class="addPresetInput diceButton" type="button" onclick="addPreset()" value="Save preset"/>
 			</div>
 		</div>
 	</div>
 
-    <footer>
+    <footer class="hfitem">
       <ul>
         <li><p>Made by <a href="https://cyanseraph.net/">@CYANSERAPH</a></p></li>
-        <li><div><p>Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p></div></li>
-        <li><p>Major update: switched hosts, refactored code, improved interface consistency, and made the app mobile friendly</p></li>
+        <li><div><p>Favicon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p></div></li>
+        <li><p>Major update: switched hosts, refactored code, improved interface and consistency, and made the app mobile friendly</p></li>
       </ul>
     </footer>
 
 	<a id="downloadSink" style="display:none;"></a>
+
+    <script src="js/output.js"></script>
 
     <script src="js/dice.js"></script>
     <script src="js/preset.js"></script>

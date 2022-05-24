@@ -4,8 +4,7 @@ var lastResults = {}
 
 function resetRoll() {
   //$('#customCount').val('')
-  $("#outputpremessage").show()
-  $('#outputBoxContent').html("")
+  resetOutputConsole()
 
   lastResults = {}
 }
@@ -46,8 +45,8 @@ function userRoll() {
   let diceData = getDiceSetup()
 
   if (isNaN(diceData.amountIn) == true || isNaN(diceData.sizeIn) == true || diceData.amountIn < 1 || diceData.sizeIn < 2) {
-    $('#outputBoxContent').html("<p>Please enter a valid dice configuration</p>")
-
+    //$('#outputBoxContent').html("<p>Please enter a valid dice configuration</p>")
+    outputConsoleSay("<p>Please enter a valid dice configuration</p>")
     return
   }
 
@@ -126,9 +125,7 @@ function userRoll() {
     }
   }
 
-  $("#outputpremessage").hide()
-
-  $('#outputBoxContent').html(output)
+  outputConsoleSay(output)
 }
 
 function saveRoll() {
@@ -157,6 +154,8 @@ function saveRoll() {
     a.setAttribute("href", "data:text/txt," + fileData)
     document.body.appendChild(a)
     a.click()
+  } else {
+    outputConsoleSay("<p>In order to save to a file you must have rolled a dice first!</p>")
   }
 }
 

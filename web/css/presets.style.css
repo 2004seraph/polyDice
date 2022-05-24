@@ -59,8 +59,7 @@
     border-radius: 8px;
 
     color: aliceblue;
-    background-color: rgb(255, 20, 235);
-
+    background-color: rgb(89, 0, 255);
 }
 
 .savedPreset {
@@ -75,19 +74,20 @@
 }
 
 #addPresetContainer {
-    background-color: rgb(201, 4, 191);
+    background-color: rgb(112, 4, 201);
     width: calc(100% - 20px);
 
     margin: 10px;
 
+    padding-top: 10px;
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
-
     justify-content: center;
 }
 
 .addPresetInput {
     width: calc(100%-20px);
     margin: 10px;
+    margin-top: 0px;
 }
