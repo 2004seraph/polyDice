@@ -115,6 +115,9 @@ h3 {
 
   	flex-basis: 0;
 }
+#outputBox > * {
+	margin-right: 10px;
+}
 
 #diceactions {
 	flex: 1;
