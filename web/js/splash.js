@@ -7,4 +7,14 @@ let splashTexts = [
     "<a href='cyanseraph.net'>I make other stuff, check them out here</a>"
 ]
 
-$('#splash').html(splashTexts[Math.floor(Math.random() * splashTexts.length)])
+let splashIndex = Math.floor(Math.random() * splashTexts.length)
+
+$('#splash').html(splashTexts[splashIndex])
+
+setInterval(() => {
+    $('#splash').slideUp("slow", () => {
+        splashIndex = (splashIndex + 1) % splashTexts.length
+        $('#splash').html(splashTexts[splashIndex])
+        $('#splash').slideDown()
+    })
+}, 5000)
