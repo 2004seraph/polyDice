@@ -116,6 +116,3 @@ class PresetItem {
     }
 }
 
-$(document).ready(function() {
-    getPresets()
-})
