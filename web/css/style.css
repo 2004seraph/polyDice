@@ -15,6 +15,13 @@ body {
   	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#noscript {
+	width: 100%;
+}
+#noscript > h2 {
+	margin: 10px;
+}
+
 #splashDiv {
 	height: 21px;
 	margin: 10px;

@@ -42,7 +42,7 @@
     </header>
 
 	<div id="appcontainer">
-		<div id="dicegui">
+		<div id="dicegui" style="display: none;">
 			<div id="settingspanel">
 				<form class="optionsbox" id="dicedesign">
 					<h3>Dice design</h3>
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 
-		<div class="optionsbox" id="presetOptions">
+		<div class="optionsbox" id="presetOptions" style="display: none;">
 			<h3>Presets</h3>
 			<p>These presets are only saved on your device, within your browser</p>
 
@@ -112,6 +112,10 @@
 				<input class="addPresetInput diceInput" type="text" name="presetnameinput" maxlength="18" placeholder="Preset name (no spaces)" id="presetnameinput"/>
 				<input class="addPresetInput diceButton" type="button" onclick="addPreset()" value="Save preset"/>
 			</div>
+		</div>
+
+		<div id="noscript" class="optionsbox">
+			<h2>Please enable JavaScript to use this app</h2>
 		</div>
 	</div>
 
@@ -131,5 +135,7 @@
     <script src="js/preset.js"></script>
 
     <script src="js/splash.js"></script>
+
+    <script src="js/index.js"></script>
   </body>
 </html>
