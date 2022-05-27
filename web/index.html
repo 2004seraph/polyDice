@@ -29,11 +29,14 @@
 
     <link href="css/link.style.css" rel="stylesheet" type="text/css" />
     <link href="css/presets.style.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="css/bg.style.css" rel="stylesheet" type="text/css" /> -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 	  
     <script src="js/lib/jquery.js"></script>
   </head>
   <body>
+	<!-- <div id="particleBG"></div> -->
+
     <header class="hfitem">
       <h1>
         polyDice: A Custom Dice Calculator
@@ -47,12 +50,12 @@
 				<form class="optionsbox" id="dicedesign">
 					<h3>Dice design</h3>
 			
-					<div class="form-group">
+					<div class="form-group form-group-row">
 						<label class="form-group-label-big" for="Amount">Number of Dice</label>
 						<input class="form-group-input-small diceInput" id="Amount" name="Amount" type="number" min="1" max="100000" maxlength="5" value="10"/>
 					</div>
 			
-					<div class="form-group">
+					<div class="form-group form-group-row">
 						<label class="form-group-label-big" for="Sides">Number of Sides</label>
 						<input class="form-group-input-small diceInput" id="Sides" name="Sides" type="number" min="2" max="100000" maxlength="5" value="3"/>
 					</div>
@@ -64,7 +67,7 @@
 				<div class="optionsbox">
 					<h3>Counting options</h3>
 					
-					<div class="form-group-column">
+					<div class="form-group form-group-column">
 						<label class="form-group-label-small" for="customcount">Only Count these numbers (Comma separated, numbers only, no spaces)</label>
 						<input class="form-group-input-big diceInput" name="customcount" id="customCount"/>
 					</div>
@@ -73,11 +76,11 @@
 				<div class="optionsbox">
 					<h3>Output options</h3>
 
-					<div class="form-group">
+					<div class="form-group form-group-row">
 						<label class="form-group-label-small" for="Raw">Show all rolls</label>
 						<input type="checkbox" id="Raw" name="Raw" value="Raw"/>
 					</div>
-					<div class="form-group ">
+					<div class="form-group form-group-row">
 						<label class="form-group-label-small" for="Count">Show counts and sums</label>
 						<input type="checkbox" id="Count" name="Count" value="Count" checked="true"/>
 					</div>
@@ -135,6 +138,8 @@
     <script src="js/preset.js"></script>
 
     <script src="js/splash.js"></script>
+
+    <!-- <script src="js/particle.js"></script> -->
 
     <script src="js/index.js"></script>
   </body>

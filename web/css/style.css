@@ -107,10 +107,7 @@ h3 {
 	background: linear-gradient(0deg, rgb(46, 0, 121) 0%, rgb(181, 54, 255) 100%);
 	background-attachment:local;
 	background-size: 100% 100%;
-
-	border-radius: 8px;
 	color: aliceblue;
-	width: 100%;
 
   	flex: 5;
 
@@ -133,42 +130,32 @@ h3 {
 .form-group {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 10px;
 
+	padding: 10px;
 	gap: 10px;
 
-/* 	flex: 1; */
-  	background-color: rgb(241, 83, 255);
-  
-  	margin: 10px;
-	margin-top: 0px;
+	background-color: rgb(241, 83, 255);
+
+	margin: 10px;
+  	margin-top: 0px;
 
   	justify-content: space-between;
 
   	border-radius: 5px;
 
   	color: white;
+
+	/* border-style: solid;
+	border-width: 1px;
+	border-color: rgba(240, 248, 255, 0.548); */
+}
+.form-group-row {
+	flex-direction: row;
 }
 .form-group-column {
-	display: flex;
   	flex-direction: column;
-	flex-wrap: wrap;
-	padding: 10px;
-
-	gap: 10px;
-
-/* 	flex: 1; */
-  	background-color: rgb(241, 83, 255);
-  
-  	margin: 10px;
-	margin-top: 0px;
-
-  	justify-content: space-between;
-
-  	border-radius: 5px;
-
-  	color: white;
 }
+
 .form-group-input-big {
 	flex: 2;
 
