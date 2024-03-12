@@ -1,4 +1,5 @@
 # polyDice
-Custom dice app calculator thing for DnD and the like. Originally made for me and my friends game due to it requiring complex dice rolling, but it's now public.
+
+Originally made for my group's campaign due to it requiring esoteric dice math, but it's now public.
 
 Deployed at: https://2004seraph.github.io/polyDice/
